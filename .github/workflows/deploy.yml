@@ -5,13 +5,29 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.2.0
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Upload source
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "."
+          target: "/root/mavazegar_deploy"
+          overwrite: true
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
@@ -19,16 +35,28 @@ jobs:
           script: |
             set -e
 
-            cd /root/mavazegar_mvp/mavazegar_production_ready_v32
+            SOURCE="/root/mavazegar_deploy"
+            TARGET="/root/mavazegar_mvp/mavazegar_production_ready_v32"
+            RELEASE="/root/mavazegar_release"
 
-            if [ ! -d .git ]; then
-              git init
-              git remote add origin https://github.com/Alireza-Karimi-2003/mohtavachi.git
+            rm -rf "$RELEASE" "$TARGET.prev"
+            mkdir -p "$RELEASE"
+
+            cp -a "$SOURCE"/. "$RELEASE"/
+            rm -rf "$RELEASE/.git" "$RELEASE/.github"
+
+            cp "$TARGET/.env" "$RELEASE/.env"
+
+            if [ -d "$TARGET/backups" ]; then
+              cp -a "$TARGET/backups" "$RELEASE/backups"
+            else
+              mkdir -p "$RELEASE/backups"
             fi
 
-            git fetch origin main
-            git checkout -B main origin/main
-            git reset --hard origin/main
+            mv "$TARGET" "$TARGET.prev"
+            mv "$RELEASE" "$TARGET"
+
+            cd "$TARGET"
 
             docker compose -f docker-compose.production.yml build bot
             docker compose -f docker-compose.production.yml up -d bot
@@ -36,6 +64,7 @@ jobs:
             sleep 10
 
             docker ps
-
             curl -fsS https://mohtavachiapp.ir/health
             curl -fsS https://mohtavachiapp.ir/ready
+
+            rm -rf "$TARGET.prev" "$SOURCE"
