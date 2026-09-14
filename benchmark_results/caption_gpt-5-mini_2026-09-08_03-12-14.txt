@@ -1,0 +1,11 @@
+MODEL: gpt-5-mini
+TEST: Caption
+REASONING_EFFORT: minimal
+TIME_SECONDS: 2.53
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 296, "completion_tokens": 110, "total_tokens": 406, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+همین شلوار مشکی که هر بار توی کمد سراغش می‌ری — ساده، قابل‌اعتماد و همیشه مرتب.
+برای دانشگاه، قرار کاری یا یک کافه‌دیدار راحت، ترکیبش با تی‌شرت سفید یا بلوز یقه‌ای جلوه‌ای مینیمال و شیک می‌سازه.
+اگه دنبال یک پایه به‌دردبخور برای روزهای شلوغی، این‌ یکی همیشه جواب می‌ده.

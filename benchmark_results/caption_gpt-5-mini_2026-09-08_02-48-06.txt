@@ -1,0 +1,8 @@
+MODEL: gpt-5-mini
+TEST: Caption
+TIME_SECONDS: 9.51
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 273, "completion_tokens": 630, "total_tokens": 903, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 576, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+شلوار پارچه‌ای مشکی که روز شهری رو ساده و شیک می‌کنه. از کلاس تا کافه، حسِ مرتب و بی‌دردسری به استایلت می‌ده.

@@ -1,0 +1,9 @@
+MODEL: deepseek-v4-flash
+TEST: Caption
+REASONING_EFFORT: default
+TIME_SECONDS: 3.64
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 394, "completion_tokens": 222, "total_tokens": 616, "prompt_tokens_details": {"cached_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 69}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 394}
+
+--- OUTPUT ---
+این شلوار مشکی اونایی که همیشه می‌خوای رو داشته باشی؛ نه اونقدر رسمی که تو کافه حسابی بپوشی، نه اونقدر راحت که با کفش‌های خونه اشتباه بگیریش. صبح که می‌پوشیش، دیگه لازم نیست جلوی آینه بایستی و فکر کنی «حالا با چی ستش کنم؟» — با تیشرت ساده، با بلیزر، با کتونی یا نیم‌بوت. فقط کافیه بپوشیش و بری؛ بقیه‌ش خودش درست میشه.

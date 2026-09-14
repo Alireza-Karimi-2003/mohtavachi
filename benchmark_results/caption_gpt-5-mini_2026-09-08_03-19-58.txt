@@ -1,0 +1,9 @@
+MODEL: gpt-5-mini
+TEST: Caption
+REASONING_EFFORT: minimal
+TIME_SECONDS: 3.31
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 324, "completion_tokens": 158, "total_tokens": 482, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+یک شلوار پارچه‌ای مشکی که اصلاً قرار نیست فقط برای روزهای رسمی باشد — مناسب قدم‌زدن شهری، قرار کافه‌ای، جلسه‌های کوتاه دانشگاه یا وقتی که می‌خواهی ساده اما مرتب باشی. با یک تی‌شرت ساده و کت جین روزمره می‌سازد، با بلوز یقه‌هفت و کت‌بلند برای محل کار جدی‌تر می‌شود، و با صندل یا کفش کتانی استایلی مینیمال و راحت می‌سازد. پایه‌ای، قابل‌اعتماد و همیشه آماده؛ همان قطعه‌ای که کمدت را جمع‌وجورتر و انتخاب‌ها را آسان‌تر می‌کند.

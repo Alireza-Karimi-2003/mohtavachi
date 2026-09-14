@@ -1,0 +1,29 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.production.example
+
+# Python local files
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# VCS / editor
+.git/
+.vscode/
+
+# Tests and local-only helpers not needed in the image
+tests/
+marketing/
+docs/
+LOCAL_RUN.md
+start_local.py
+postgres_smoke_test.py
+check_db_url.py
+check_polling.py
+test_getupdates.py
+scripts/
+
+# Database backups
+backups/

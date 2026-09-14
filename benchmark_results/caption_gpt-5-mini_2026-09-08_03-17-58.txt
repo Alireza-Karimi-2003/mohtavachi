@@ -1,0 +1,16 @@
+MODEL: gpt-5-mini
+TEST: Caption
+REASONING_EFFORT: minimal
+TIME_SECONDS: 2.43
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 323, "completion_tokens": 85, "total_tokens": 408, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+اسلاید ۱:
+شلوار مشکی ساده، اما همیشه آماده برای هر روزِ شهر.
+
+اسلاید ۲:
+مناسبِ دانشگاه، کافه و محل کار — راحت که حرکت کنی از استایلت کم نشه.
+
+اسلاید ۳:
+برای هر روزِ شیکِ تو؛ آماده‌ای که یکی رو برداری؟

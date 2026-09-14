@@ -1,0 +1,11 @@
+MODEL: gpt-5.6-luna
+TEST: Caption
+REASONING_EFFORT: default
+TIME_SECONDS: 3.28
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 296, "completion_tokens": 158, "total_tokens": 454, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 57, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+یک شلوار مشکی خوب، از آن انتخاب‌هایی‌ست که همیشه به کار می‌آید.  
+برای دانشگاه، محل کار، کافه یا استایل روزمره می‌توانید آن را با شومیز، تی‌شرت یا مانتو ست کنید و هر بار یک ترکیب تازه بسازید.  
+اگر دنبال یک انتخاب ساده و کاربردی برای کمدتان هستید، این شلوار می‌تواند شروع خوبی باشد.

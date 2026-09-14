@@ -1,0 +1,9 @@
+MODEL: gpt-5-mini
+TEST: Caption
+REASONING_EFFORT: minimal
+TIME_SECONDS: 2.21
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 343, "completion_tokens": 85, "total_tokens": 428, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+شلوار مشکی‌ای که همیشه لازم دارید — ساده، شیک و برای هر موقعیتی قابل‌استفاده. جنس باکیفیت و طراحی مینیمالش کار ست کردن رو راحت کرده. اگر دنبال یک گزینه‌ی مطمئن برای روزمره و شهری هستید، این همونه. همین حالا ببینید و بگیرید.

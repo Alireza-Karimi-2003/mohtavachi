@@ -1,0 +1,9 @@
+MODEL: gpt-5-mini
+TEST: Caption
+REASONING_EFFORT: minimal
+TIME_SECONDS: 2.63
+FINISH_REASON: stop
+USAGE: {"prompt_tokens": 273, "completion_tokens": 74, "total_tokens": 347, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}
+
+--- OUTPUT ---
+یه شلوار مشکی که با هر روزت هماهنگ می‌شه — از کلاس صبح تا کافه بعدازظهر. راحتیه که حسِ مرتب بودن می‌ده بدون اینکه خیلی تلاش کنی. با یه تی‌شرت ساده یا پیراهن بلند، همیشه آماده‌ای برای قدم بعدی.
