@@ -16,15 +16,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Upload source
+      - name: Package source
+        run: |
+          tar \
+            --exclude='.git' \
+            --exclude='.github' \
+            -czf mohtavachi-deploy.tar.gz .
+
+      - name: Test SSH
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          debug: true
+          script: |
+            set -e
+            echo "SSH connection successful"
+            hostname
+            test -d /root/mavazegar_mvp/mavazegar_production_ready_v32
+
+      - name: Upload package
         uses: appleboy/scp-action@v1.0.0
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "."
+          source: "mohtavachi-deploy.tar.gz"
           target: "/root/mavazegar_deploy"
           overwrite: true
+          debug: true
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.2.5
@@ -32,18 +53,18 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          debug: true
           script: |
             set -e
 
-            SOURCE="/root/mavazegar_deploy"
+            SOURCE="/root/mavazegar_deploy/mohtavachi-deploy.tar.gz"
             TARGET="/root/mavazegar_mvp/mavazegar_production_ready_v32"
             RELEASE="/root/mavazegar_release"
 
             rm -rf "$RELEASE" "$TARGET.prev"
             mkdir -p "$RELEASE"
 
-            cp -a "$SOURCE"/. "$RELEASE"/
-            rm -rf "$RELEASE/.git" "$RELEASE/.github"
+            tar -xzf "$SOURCE" -C "$RELEASE"
 
             cp "$TARGET/.env" "$RELEASE/.env"
 
