@@ -1,0 +1,41 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+
+            cd /root/mavazegar_mvp/mavazegar_production_ready_v32
+
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin https://github.com/Alireza-Karimi-2003/mohtavachi.git
+            fi
+
+            git fetch origin main
+            git checkout -B main origin/main
+            git reset --hard origin/main
+
+            docker compose -f docker-compose.production.yml build bot
+            docker compose -f docker-compose.production.yml up -d bot
+
+            sleep 10
+
+            docker ps
+
+            curl -fsS https://mohtavachiapp.ir/health
+            curl -fsS https://mohtavachiapp.ir/ready
