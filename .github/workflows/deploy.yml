@@ -21,6 +21,7 @@ jobs:
           tar \
             --exclude='.git' \
             --exclude='.github' \
+            --exclude='./mohtavachi-deploy.tar.gz' \
             -czf mohtavachi-deploy.tar.gz .
 
       - name: Test SSH
