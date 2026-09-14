@@ -30,7 +30,7 @@ jobs:
       - name: Test SSH
         uses: appleboy/ssh-action@v1.2.5
         with:
-          host: ${{ secrets.VPS_HOST }}
+          host: 5.102.37.190
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           debug: true
@@ -43,7 +43,7 @@ jobs:
       - name: Upload package
         uses: appleboy/scp-action@v1.0.0
         with:
-          host: ${{ secrets.VPS_HOST }}
+          host: 5.102.37.190
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "mohtavachi-deploy.tar.gz"
@@ -54,7 +54,7 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@v1.2.5
         with:
-          host: ${{ secrets.VPS_HOST }}
+          host: 5.102.37.190
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           debug: true
