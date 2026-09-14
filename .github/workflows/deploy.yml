@@ -21,8 +21,11 @@ jobs:
           tar \
             --exclude='.git' \
             --exclude='.github' \
-            --exclude='./mohtavachi-deploy.tar.gz' \
-            -czf mohtavachi-deploy.tar.gz .
+            -czf "$RUNNER_TEMP/mohtavachi-deploy.tar.gz" \
+            -C "$GITHUB_WORKSPACE" .
+
+          cp "$RUNNER_TEMP/mohtavachi-deploy.tar.gz" \
+             "$GITHUB_WORKSPACE/mohtavachi-deploy.tar.gz"
 
       - name: Test SSH
         uses: appleboy/ssh-action@v1.2.5
